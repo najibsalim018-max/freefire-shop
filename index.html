@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيع حسابات Free Fire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            direction: rtl;
+        }
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+        }
+        /* Product grid */
+        .products {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 150px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #666;
+        }
+        .product-content {
+            padding: 1rem;
+        }
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .product-desc {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        .price-badge {
+            background: #4ecdc4;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #ff5252;
+        }
+        /* Contact section */
+        .contact {
+            background: #333;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+        .contact p {
+            margin-bottom: 1rem;
+        }
+        .contact a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        /* Footer */
+        .footer {
+            background: #222;
+            color: #ccc;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        /* Sticky bottom bar for mobile */
+        .sticky-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            padding: 1rem;
+            z-index: 1000;
+        }
+        .sticky-bar .btn {
+            margin: 0 0.5rem;
+            flex: 1;
+        }
+        .sticky-bar-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        /* Modal for success message */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 300px;
+            width: 90%;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sticky-bar {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>بيع حسابات Free Fire</h1>
+        <p>اكتشف مجموعة من الحسابات المميزة للعبة Free Fire بأسعار مناسبة</p>
+    </section>
+
+    <!-- Products Section -->
+    <main class="products">
+        <div class="product-card">
+            <div class="product-image" alt="صورة حساب Free Fire">حساب 1</div>
+            <div class="product-content">
+                <h3 class="product-title">حساب مميز - مستوى عالي</h3>
+                <p class="product-desc">حساب يحتوي على شخصيات نادرة وأسلحة متقدمة، مثالي للاعبين المتقدمين.</p>
+                <span class="price-badge">50 د.م</span>
+                <button class="btn" onclick="orderProduct('حساب مميز - مستوى عالي')">اطلب الآن</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image" alt="صورة حساب Free Fire">حساب 2</div>
+            <div class="product-content">
+                <h3 class="product-title">حساب ذهبي - مع أسلحة</h3>
+                <p class="product-desc">حساب مع مجموعة من الأسلحة الذهبية والشخصيات الفريدة.</p>
+                <span class="price-badge">120 د.م</span>
+                <button class="btn" onclick="orderProduct('حساب ذهبي - مع أسلحة')">اطلب الآن</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image" alt="صورة حساب Free Fire">حساب 3</div>
+            <div class="product-content">
+                <h3 class="product-title">حساب برو - مستوى متوسط</h3>
+                <p class="product-desc">حساب مناسب للاعبين الذين يريدون بداية قوية مع موارد إضافية.</p>
+                <span class="price-badge">80 د.م</span>
+                <button class="btn" onclick="orderProduct('حساب برو - مستوى متوسط')">اطلب الآن</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image" alt="صورة حساب Free Fire">حساب 4</div>
+            <div class="product-content">
+                <h3 class="product-title">حساب في آي بي - عالي الجودة</h3>
+                <p class="product-desc">حساب مع شخصيات في آي بي وأسلحة نادرة، مثالي للعب التنافسي.</p>
+                <span class="price-badge">300 د.م</span>
+                <button class="btn" onclick="orderProduct('حساب في آي بي - عالي الجودة')">اطلب الآن</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image" alt="صورة حساب Free Fire">حساب 5</div>
+            <div class="product-content">
+                <h3 class="product-title">حساب مبتدئ - مع هدايا</h3>
+                <p class="product-desc">حساب جديد مع هدايا مجانية وموارد للبداية السريعة.</p>
+                <span class="price-badge">40 د.م</span>
+                <button class="btn" onclick="orderProduct('حساب مبتدئ - مع هدايا')">اطلب الآن</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image" alt="صورة حساب Free Fire">حساب 6</div>
+            <div class="product-content">
+                <h3 class="product-title">حساب أسطوري - كامل الموارد</h3>
+                <p class="product-desc">حساب أسطوري مع جميع الموارد والشخصيات النادرة.</p>
+                <span class="price-badge">500 د.م</span>
+                <button class="btn" onclick="orderProduct('حساب أسطوري - كامل الموارد')">اطلب الآن</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>تواصل معنا</h2>
+        <p>لأي استفسارات، اتصل بنا عبر الهاتف أو واتساب.</p>
+        <p>رقم الهاتف: <a href="tel:+212648180886">+212 648-180886</a></p>
+        <p>واتساب: <a href="https://wa.me/212648180886">https://wa.me/212648180886</a></p>
+        <p>المشتري يتحمل مسؤولية توافق الحساب مع شروط اللعبة.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>تنبيه: بيع وشراء الحسابات قد يخالف شروط الخدمة الخاصة بلعبة Free Fire. الموقع يعرض الحسابات للمعلومات فقط.</p>
+    </footer>
+
+    <!-- Sticky Bottom Bar for Mobile -->
+    <div class="sticky-bar">
+        <div class="sticky-bar-container">
+            <a href="tel:+212648180886" class="btn">اتصل</a>
+            <a href="https://wa.me/212648180886" class="btn">اطلب عبر واتساب</a>
+        </div>
+    </div>
+
+    <!-- Modal for Success Message -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p>تم إرسال الطلب</p>
+            <button class="btn" onclick="closeModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle order via WhatsApp
+        function orderProduct(productName) {
+            const message = encodeURIComponent(`سلام، مهتم بالحساب: ${productName} — الرجاء التواصل. رقم الهاتف: +212648180886`);
+            const whatsappUrl = `https://wa.me/212648180886?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+            showModal();
+        }
+
+        // Function to show modal
+        function showModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Function to close modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
